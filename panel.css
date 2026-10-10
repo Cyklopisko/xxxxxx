@@ -1,0 +1,190 @@
+[hidden] {
+  display: none !important;
+}
+.demo-mode {
+  position: fixed;
+  left: 16px;
+  bottom: 76px;
+  z-index: 35;
+  color: #7f9f91;
+  font:
+    10px var(--font-space),
+    sans-serif;
+  pointer-events: none;
+}
+#panel-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  max-width: calc(100vw - 32px);
+  padding: 12px 18px;
+  background: #183328;
+  border: 1px solid #3e6858;
+  color: #d3f6e6;
+  border-radius: 9px;
+  font:
+    12px var(--font-space),
+    sans-serif;
+  box-shadow: 0 8px 30px #0006;
+}
+.demo-dialog {
+  background: #171717;
+  color: #ededed;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 24px;
+  width: min(480px, calc(100vw - 32px));
+  font:
+    13px var(--font-space),
+    sans-serif;
+  max-height: 85svh;
+  overflow: auto;
+}
+.demo-dialog::backdrop {
+  background: #000a;
+  backdrop-filter: blur(4px);
+}
+.demo-dialog h2 {
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+.demo-dialog p {
+  line-height: 1.7;
+  color: #aaa;
+}
+.demo-dialog header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.demo-dialog input:not([type="checkbox"]),
+.demo-dialog select,
+.demo-dialog textarea {
+  width: 100%;
+  background: #222;
+  color: #eee;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 7px 0 16px;
+  font: inherit;
+}
+.demo-dialog button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #272727;
+  border: 1px solid #3c3c3c;
+  cursor: pointer;
+}
+.demo-dialog button[type="submit"] {
+  background: #42eaab;
+  color: #10261d;
+  border-color: #42eaab;
+}
+.demo-dialog footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+.demo-dialog label {
+  display: block;
+}
+.demo-dialog pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding: 16px;
+  background: #101010;
+  border-radius: 8px;
+}
+.demo-options {
+  display: grid;
+  gap: 6px;
+}
+.demo-options button {
+  text-align: left;
+}
+.demo-select {
+  font: inherit;
+  background: #202020;
+  color: #ccc;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 7px 12px;
+  max-width: 100%;
+}
+.demo-request-link {
+  font-size: 11px !important;
+  text-align: left !important;
+  color: #d5d5d5 !important;
+}
+.demo-request-link:hover {
+  color: #42eaab !important;
+}
+.demo-status-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #42eaab;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+.demo-status-dot.failed {
+  background: #e99999;
+}
+.demo-empty {
+  text-align: center;
+  color: #999;
+  padding: 32px !important;
+}
+.demo-ticket {
+  padding: 12px;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+.demo-ticket small {
+  display: block;
+  color: #888;
+  margin-top: 6px;
+}
+.demo-reply {
+  margin: 16px 0;
+  padding: 14px;
+  background: #202522;
+  border: 1px solid #344039;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.demo-dialog :focus-visible {
+  outline: 2px solid #42eaab;
+  outline-offset: 3px;
+}
+.vx-key-row code {
+  overflow-wrap: anywhere;
+}
+.gw-main:focus {
+  outline: none;
+}
+@media (max-width: 760px) {
+  .demo-mode {
+    position: static;
+    text-align: center;
+    padding: 12px;
+    background: #111;
+  }
+  .vx-sidebar .demo-mode {
+    display: none;
+  }
+  #panel-toast {
+    width: max-content;
+    text-align: center;
+  }
+  .demo-dialog {
+    padding: 18px;
+  }
+}

@@ -1,0 +1,233 @@
+<dialog
+  class="wallet-dialog wallet-topup-dialog"
+  aria-labelledby="wallet-title"
+  open=""
+>
+  <div class="wallet-body">
+    <header class="wallet-header">
+      <div class="wallet-heading-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-wallet"
+          aria-hidden="true"
+        >
+          <path
+            d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
+          ></path>
+          <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
+        </svg>
+      </div>
+      <div>
+        <p class="wallet-eyebrow">YOUR WORKSPACE, REFUELLED</p>
+        <h2 id="wallet-title">Top up your wallet</h2>
+        <p>One balance for all your API keys.</p>
+      </div>
+      <button class="wallet-close" aria-label="Close top up">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-x"
+          aria-hidden="true"
+        >
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </header>
+    <div class="wallet-simple-form">
+      <div class="wallet-simple-field">
+        <label class="wallet-simple-label">Pay with</label>
+        <div class="wallet-coin-picker">
+          <button
+            type="button"
+            class="wallet-coin-trigger"
+            aria-label="Cryptocurrency and network"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-controls="_r_9_"
+          >
+            <span class="wallet-coin-avatar"
+              ><img
+                alt=""
+                width="28"
+                height="28"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                src="https://nowpayments.io/images/coins/ltc.svg" /></span
+            ><span class="wallet-coin-title"
+              ><strong>Litecoin</strong><small>LTC</small></span
+            ><span class="wallet-network-badge">Litecoin</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-chevron-down"
+              aria-hidden="true"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="wallet-simple-field wallet-amount">
+        <label class="wallet-simple-label" for="topup-amount">Amount</label>
+        <div class="wallet-amount-input">
+          <span>$</span
+          ><input
+            id="topup-amount"
+            inputmode="decimal"
+            max="200"
+            step="0.01"
+            aria-invalid="false"
+            aria-describedby="topup-minimum"
+            type="number"
+            value="10"
+            min="1"
+          /><span>USD</span>
+        </div>
+        <input
+          class="wallet-amount-slider"
+          aria-label="Top-up amount"
+          aria-valuetext="$10.00"
+          min="1"
+          max="200"
+          step="0.01"
+          type="range"
+          value="10"
+          style="
+            background-image: linear-gradient(
+              to right,
+              rgb(66, 234, 171) 4.52261%,
+              rgb(52, 52, 52) 4.52261%
+            );
+          "
+        />
+        <div class="wallet-presets">
+          <button aria-pressed="false">$1</button
+          ><button aria-pressed="true">$10</button
+          ><button aria-pressed="false">$25</button
+          ><button aria-pressed="false">$50</button
+          ><button aria-pressed="false">$100</button>
+        </div>
+        <div class="wallet-minimum" id="topup-minimum" aria-live="polite">
+          <p>Minimum $1.00 · Maximum $200</p>
+        </div>
+      </div>
+      <details class="wallet-simple-coupon">
+        <summary>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-ticket-percent"
+            aria-hidden="true"
+          >
+            <path
+              d="M2 9a3 3 0 1 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 1 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"
+            ></path>
+            <path d="M9 9h.01"></path>
+            <path d="m15 9-6 6"></path>
+            <path d="M15 15h.01"></path></svg
+          >Have a promo code?
+        </summary>
+        <div class="wallet-coupon-entry" data-state="idle">
+          <input
+            id="wallet-coupon"
+            maxlength="32"
+            placeholder="Enter promo code"
+            aria-describedby="wallet-coupon-status"
+            autocomplete="off"
+            value=""
+          />
+        </div>
+        <p
+          id="wallet-coupon-status"
+          class="wallet-coupon-status"
+          aria-live="polite"
+        ></p>
+      </details>
+      <div class="wallet-simple-summary">
+        <div>
+          <span>You receive</span
+          ><strong>200,000,000 <small>tokens</small></strong>
+        </div>
+        <p>20M tokens = $1. Model multipliers apply.</p>
+      </div>
+      <button class="wallet-pay">
+        Continue to payment<svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right"
+          aria-hidden="true"
+        >
+          <path d="M7 7h10v10"></path>
+          <path d="M7 17 17 7"></path>
+        </svg>
+      </button>
+      <p class="wallet-simple-footnote">
+        Network fees are shown at checkout. Funds are added after confirmation.
+      </p>
+      <a
+        class="wallet-simple-paypal"
+        href="https://discord.gg/dawvq"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Prefer PayPal? Contact us on Discord<svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right"
+          aria-hidden="true"
+        >
+          <path d="M7 7h10v10"></path>
+          <path d="M7 17 17 7"></path></svg
+      ></a>
+    </div>
+    <footer class="wallet-footer">
+      <span>dawvq.com</span
+      ><span
+        ><span class="wallet-live-dot"></span>ONE WALLET. EVERY MODEL.</span
+      >
+    </footer>
+  </div>
+</dialog>
